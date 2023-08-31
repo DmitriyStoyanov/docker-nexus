@@ -3,7 +3,7 @@ name: Docker Build and Push image
 on:
   push:
     branches:
-      - master
+      - dockerhub_image
 
 jobs:
   build_and_publish:
@@ -16,3 +16,4 @@ jobs:
         name: scorpio2002/docker-nexus
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        tags: "latest,3.68.1-02"
