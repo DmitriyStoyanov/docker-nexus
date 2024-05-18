@@ -12,7 +12,7 @@ But PRs review and merges into main repo too long, because of that, I've changed
 ## Current software
 
 * Alpine Linux 3.18
-* OpenJDK JRE 8u212
+* OpenJDK JRE 8u402
 * Nexus Repository Manager OSS 3.68.1 ([release notes](https://help.sonatype.com/en/sonatype-nexus-repository-3-68-0-release-notes.html))
 
 ## Running
