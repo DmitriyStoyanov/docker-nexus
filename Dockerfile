@@ -1,6 +1,6 @@
 FROM alpine:3.18
 
-LABEL maintainer devops@travelaudience.com
+LABEL maintainer Dmitry_Stoyanov@epam.com
 
 # java
 ENV JAVA_HOME=/usr/lib/jvm/default-jvm/jre
@@ -9,10 +9,10 @@ ENV JAVA_HOME=/usr/lib/jvm/default-jvm/jre
 # https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3
 
 # nexus
-ENV NEXUS_VERSION "3.68.1-02"
+ENV NEXUS_VERSION "3.68.1"
 ENV NEXUS_DOWNLOAD_URL "https://download.sonatype.com/nexus/3"
-ENV NEXUS_TARBALL_URL "${NEXUS_DOWNLOAD_URL}/nexus-${NEXUS_VERSION}-java8-unix.tar.gz"
-ENV NEXUS_TARBALL_ASC_URL "${NEXUS_DOWNLOAD_URL}/nexus-${NEXUS_VERSION}-java8-unix.tar.gz.asc"
+ENV NEXUS_TARBALL_URL "${NEXUS_DOWNLOAD_URL}/nexus-${NEXUS_VERSION}-02-java8-unix.tar.gz"
+ENV NEXUS_TARBALL_ASC_URL "${NEXUS_DOWNLOAD_URL}/nexus-${NEXUS_VERSION}-02-java8-unix.tar.gz.asc"
 ENV GPG_KEY 0374CF2E8DD1BDFD
 
 ENV SONATYPE_DIR /opt/sonatype
@@ -37,7 +37,7 @@ RUN apk add --no-cache -t .build-deps wget gnupg openssl \
     rm -r $GNUPGHOME nexus.tar.gz.asc; \
   tar -xf nexus.tar.gz \
   && mkdir -p $SONATYPE_DIR \
-  && mv nexus-$NEXUS_VERSION $NEXUS_HOME \
+  && mv nexus-${NEXUS_VERSION}-02 $NEXUS_HOME \
   && cd $NEXUS_HOME \
   && ls -las \
   && adduser -h $NEXUS_DATA -DH -s /sbin/nologin nexus \

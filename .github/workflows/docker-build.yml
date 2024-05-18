@@ -2,8 +2,8 @@ name: Docker Build and Push image
 
 on:
   push:
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]+'
+    branches:
+      - '**'
 
 jobs:
   build_and_publish:
@@ -16,4 +16,4 @@ jobs:
         name: scorpio2002/docker-nexus
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
-        tag_names: true
+        no_push: true
