@@ -2,7 +2,12 @@
 
 A container image for Sonatype Nexus Repository Manager OSS, based on Alpine Linux.
 
-[![Docker Repository on Quay](https://quay.io/repository/travelaudience/docker-nexus/status "Docker Repository on Quay")](https://quay.io/repository/travelaudience/docker-nexus)
+[![Docker Pulls](https://img.shields.io/docker/pulls/scorpio2002/docker-nexus)](https://hub.docker.com/r/scorpio2002/docker-nexus/tags?page=1&ordering=last_updated)
+
+# History
+
+This repo created as fork of the repo https://github.com/travelaudience/docker-nexus/ with updating version and preparing PRs into main repo.
+But PRs review and merges into main repo too long, because of that, I've changed info in my repo, created automatical push into my dockerhub repo. So you can use latest images from dockerhub for the moment.
 
 ## Current software
 
@@ -12,10 +17,10 @@ A container image for Sonatype Nexus Repository Manager OSS, based on Alpine Lin
 
 ## Running
 
-Running it locally (for the latest tag, check [quay.io/repository/travelaudience/docker-nexus](https://quay.io/repository/travelaudience/docker-nexus?tab=tags):
+Running it locally (for the latest tag, check [scorpio2002/docker-nexus](https://hub.docker.com/r/scorpio2002/docker-nexus/tags):
 
 ```shell
-docker run -p 8081:8081 --name nexus quay.io/travelaudience/docker-nexus:3.68.1-02
+docker run -p 8081:8081 --name nexus scorpio2002/docker-nexus:3.68.1
 ```
 
 ## Reasoning
