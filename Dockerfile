@@ -29,8 +29,8 @@ RUN apk add --no-cache --update bash ca-certificates runit su-exec util-linux op
 RUN apk add --no-cache -t .build-deps wget gnupg openssl \
   && cd /tmp \
   && echo "===> Installing Nexus ${NEXUS_VERSION}..." \
-  && wget -O nexus.tar.gz $NEXUS_TARBALL_URL; \
-  wget -O nexus.tar.gz.asc $NEXUS_TARBALL_ASC_URL; \
+  && wget --no-verbose -O nexus.tar.gz $NEXUS_TARBALL_URL; \
+  wget --no-verbose -O nexus.tar.gz.asc $NEXUS_TARBALL_ASC_URL; \
     export GNUPGHOME="$(mktemp -d)"; \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys $GPG_KEY; \
     gpg --batch --verify nexus.tar.gz.asc nexus.tar.gz; \
